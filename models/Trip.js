@@ -59,7 +59,11 @@ const Trip = sequelize.define("Trip", {
         type: DataTypes.FLOAT,
         allowNull: true
     },
-
+    vehicle:{
+        type:DataTypes.ENUM("auto", "car", "bike"),
+        defaultValue:"auto",
+        allowNull:true
+    },
     status: {
         type: DataTypes.ENUM("pending", "accepted", "on-trip", "completed", "cancelled"),
         defaultValue: "pending"

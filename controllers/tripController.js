@@ -9,7 +9,8 @@ exports.createTrip = async (req, res) => {
             pickup_date,
             pickup_time,
             return_date,
-            return_time
+            return_time,
+            vehicle
         } = req.body;
 
         // Validation for ROUND TRIP
@@ -27,7 +28,8 @@ exports.createTrip = async (req, res) => {
             pickup_date,
             pickup_time,
             return_date: trip_type === "round" ? return_date : null,
-            return_time: trip_type === "round" ? return_time : null
+            return_time: trip_type === "round" ? return_time : null,
+            vehicle
         });
 
         res.status(201).json({
